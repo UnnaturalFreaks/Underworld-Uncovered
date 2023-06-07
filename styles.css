@@ -164,14 +164,12 @@ footer p {
     .padded-paragraph {
         padding-left: 160px;
         padding-right: 160px;
+        font-size: 8px;
     }
 
     footer p {
         padding: 0;
     }
-    
-      .final-paragraph {
-    font-size: 10px;  /* or whatever size you want it to be */
-  }
+
 }
   
