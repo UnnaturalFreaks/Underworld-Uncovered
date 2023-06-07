@@ -104,7 +104,7 @@ a:hover {
 }
 
 .padded-paragraph {
-    padding: 10px 5%;
+    padding: 20px 8%;
     margin: 15px; 
     text-align: justify;
 }
@@ -162,8 +162,8 @@ footer p {
     }
 
     .padded-paragraph {
-        padding-left: 130px;
-        padding-right: 130px;
+        padding-left: 110px;
+        padding-right: 110px;
         font-size: 8px;
     }
 
