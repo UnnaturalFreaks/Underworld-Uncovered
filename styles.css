@@ -1,124 +1,156 @@
 body {
     background: linear-gradient(to right, #831b1b 10%, #ffffff 10%, #ffffff 90%, #831b1b 90%);
     color: #000000;
-    font-size: 16px;
-    padding: 0 10%;
-}
-
-@font-face {
+  }
+  
+  @font-face {
     font-family: 'Destroyed Aero';
     src: url('fonts/Destroyed Aero.ttf') format('truetype');
-}
-
-header {
+  }
+  
+  header {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
-}
+  }
+  
+  .header-logo {
+    height: 250px;  /* adjust this value to change the size of the image */
+    width: auto;  /* keep this to maintain the aspect ratio of the image */
+    margin-right: 10px;  /* adjust this value to add some space between the image and the text */
+  }
 
-.header-logo {
-    height: 250px;
-    width: auto;
-    margin-right: 10px;
-}
-
-.header-content {
+  .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-}
-
-h1, h3, h4, h5, h6, h2 {
+    width: 70%;
+  }
+  
+  
+  h1, h3, h4, h5, h6 {
     color: #831b1b;
     font-family: 'Destroyed Aero', fallback, sans-serif;
     letter-spacing: 0.15em;
     text-align: center;
-}
+  }
 
-h2 {
+  h2 {
+    color: #831b1b;
+    font-family: 'Destroyed Aero', fallback, sans-serif;
+    letter-spacing: 0.15em;
     padding: 20px 20px;
     font-size: 250%;
-}
+  }
 
-main {
-    padding-bottom: 60px;
-}
-
-a {
+  main {
+    padding-bottom: 60px;  /* Adjust this value to the height of your footer */
+  }
+  
+  a {
     color: #da4040;
-}
-
-a:hover {
+  }
+  
+  a:hover {
     text-decoration: underline;
-}
-
-.image-container {
+  }
+  
+  .image-container {
     display: flex;
     justify-content: space-around;
-    padding: 0 5%;
-}
-
-.image-container figure {
+    padding: 0 8%;
+  }
+  
+  .image-container figure {
     width: 100%;
-}
-
-.image-container img {
-    max-width: 100%;
-    height: auto;
-}
-
-.image-container figcaption {
+  }
+  
+  .image-container img {
+    width: 100%;
+  }
+  
+  .image-container figcaption {
     text-align: center;
-}
-
-.line {
+  }
+  
+  .line {
     height: 1px;
     background-color: #831b1b;
-    width: 100%;
+    width: 75%;
     margin: auto;
     padding: 5px 20px;
-}
-
-.columns {
+  }
+  
+  .columns {
     display: flex;
     justify-content: space-between;
-    padding: 0 5%;
-    flex-wrap: wrap;
-}
-
-.left-column, .right-column, .left-columnB, .right-columnB {
-    width: 100%;
-    padding: 20px 0;
-}
-
-.left-column p, .right-columnB p {
+    padding: 0 200px;
+  }
+  
+  .left-column {
+    width: 55%;
+    padding: 20px 100px;
+    display: block; /* This makes the image a block element, which allows us to use auto margins for centering */
+    margin: auto; /* This will center the image */
+  }
+  
+  .left-column p {
     text-align: justify;
-}
+    align-items: center;
+    
+  }
+  
+  .right-column {
+    width: 45%;
+    padding: 5px 5px;
+  }
+  
+  .right-column img {
+    max-width: 100%; /* This will ensure the image does not exceed the width of its container */
+    display: block; /* This makes the image a block element, which allows us to use auto margins for centering */
+    margin: auto; /* This will center the image */
+  }
 
-.right-column img, .left-columnB img {
-    max-width: 100%;
-    display: block;
-    margin: auto;
-}
-
-.padded-paragraph {
-    padding: 20px 8%;
+  .right-columnB {
+    width: 55%;
+    padding: 20px 40px;
+  }
+  
+  .right-columnB p {
+    text-align: justify;
+    align-items: center;
+  }
+  
+  .left-columnB {
+    width: 45%;
+    padding: 5px 5px;
+  }
+  
+  .left-columnB img {
+    max-width: 100%; /* This will ensure the image does not exceed the width of its container */
+    display: block; /* This makes the image a block element, which allows us to use auto margins for centering */
+    margin: auto; /* This will center the image */
+  }
+  
+  .padded-paragraph {
+    padding-left: 160px;  /* adjust these values as needed */
+    padding-right: 160px;
     margin: 15px; 
     text-align: justify;
-}
-
-.story-title{
-    text-align: center;
-}
-
-figure h5 + p {
-    margin-top: 0px;
-    text-align: justify;
-}
+  }
   
-footer {
+  .story-title{
+    text-align: center;
+  }
+
+  figure h5 + p {
+    margin-top: 0px; /* Adjust this value to increase or decrease the space */
+    text-align: justify;
+    align-items: center;
+  }
+  
+  footer {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -130,46 +162,12 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-footer p {
+  }
+  
+  footer p {
     color: #ffffff;
     margin: 0;
-    padding: 0 10px;
+    padding: 0;
     font-size: 80%;
-}
-
-
-@media screen and (min-width: 481px) {
-    .header-content {
-        width: 70%;
-    }
-
-    .image-container {
-        padding: 0 8%;
-    }
-
-    .left-column, .right-column, .left-columnB, .right-columnB {
-        padding: 20px 0;
-    }
-
-    .left-column, .right-columnB {
-        width: 55%;
-    }
-
-    .right-column, .left-columnB {
-        width: 45%;
-    }
-
-    .padded-paragraph {
-        padding-left: 110px;
-        padding-right: 110px;
-        font-size: 8px;
-    }
-
-    footer p {
-        padding: 0;
-    }
-
-}
+  }
   
