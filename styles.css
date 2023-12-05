@@ -2,19 +2,19 @@ body {
     background: linear-gradient(to right, #831b1b 10%, #ffffff 10%, #ffffff 90%, #831b1b 90%);
     color: #000000;
   }
-@media only screen and (max-width: 767px) {
-  body {
-    background: linear-gradient(to right, #831b1b 5%, #ffffff 5%, #ffffff 95%, #831b1b 95%);
-    color: #000000;
-  }
+@media (max-width: 767px) {
+    body {
+        background: linear-gradient(to right, #831b1b 5%, #ffffff 5%, #ffffff 95%, #ADBCA5 95%);
+        color: #000000;
+    }
 }
 main {
     padding-bottom: 20.5%; /* Adjust this value to the height of your footer */
-    margin-right: 50%;
+    margin-right: 10%;
     margin-left: 10%;
 }
 
-@media only screen and (max-width: 767px) {
+@media (max-width: 767px) {
     main {
         margin-right: 5%;
         margin-left: 5%;
