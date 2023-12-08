@@ -21,11 +21,6 @@ main {
     }
 }*/
 
-@media only screen and (max-width: 2000px) {
-  body {
-    background-color: lightblue;
-    width: 10%
-  }
 }   
 
 
@@ -379,3 +374,9 @@ input[type=radio] {
     z-index: 1;
 }
   
+
+@media only screen and (max-width: 700px) {
+  body {
+    background-color: lightblue;
+    width: 10%
+  }
