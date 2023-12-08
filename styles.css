@@ -380,3 +380,8 @@ input[type=radio] {
     background-color: lightblue;
     width: 10%
   }
+  @media (orientation: landscape) {
+  body {
+    color: rebeccapurple;
+  }
+}
