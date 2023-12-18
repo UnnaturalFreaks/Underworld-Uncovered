@@ -1,7 +1,7 @@
 body {
-    background: linear-gradient(to right, #bd0000 10%, #342222 10%, #342222 90%, #831b1b 90%);
+    background: linear-gradient(to right, #831b1b 10%, #342222 10%, #342222 90%, #831b1b 90%);
     color: #FFFFFF;
-  }
+}
 main {
     padding-bottom: 2.5%; /* Adjust this value to the height of your footer */
     margin-right: 10%;
@@ -9,14 +9,70 @@ main {
 }
 
 @media only screen and (max-width: 768px) {
-  body {
-      margin-right:0;
-      margin-left:0;
-      width:100%;
-      justify-content: center;
-    align-items: center;
-      background: linear-gradient(to right, #bd0000 2.5%, #342222 2.5%, #342222 97.5%, #bd0000 97.5%);
-  }
+    body {
+        margin-right: 0;
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #831b1b 2.5%, #342222 2.5%, #342222 97.5%, #bd0000 97.5%);
+    }
+    main {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .customcolumns {
+        display: block; /* Change display to block for single-column layout on small screens */
+    }
+
+    .panel1,
+    .panel2 {
+        width: 100%; /* Full width for individual panels */
+        margin: 0; /* Remove margin for panels */
+    }
+
+    .right-columnB,
+    .left-columnB {
+        width: 100%; /* Full width for columns */
+        padding: 20px 5%; /* Adjust padding for smaller screens */
+    }
+
+    .header-logo {
+        width: 80%; /* Adjust header logo size for smaller screens */
+    }
+
+    .carousel {
+        max-width: 100%; /* Make the carousel responsive */
+    }
+
+    .container {
+        max-width: 100%; /* Make the container responsive */
+    }
+
+    .mags {
+        height: auto; /* Adjust height for smaller screens */
+        flex-direction: column; /* Stack magazines vertically on smaller screens */
+    }
+
+    .carousel img {
+        height: auto; /* Make carousel images responsive */
+    }
+
+    .description-box {
+        width: 100%; /* Full width for description box */
+    }
+
+    .info-area {
+        width: 100%; /* Full width for info area */
+        left: 0; /* Adjust left position for smaller screens */
+    }
+
+    .padded-paragraph {
+        width: 100%; /* Full width for paragraphs */
+    }
+
+
 }
 .customcolumns{
     display:grid;
@@ -25,7 +81,6 @@ main {
 }
   .panel1 {
     grid-area: p1;
-    scale:90%;
     margin-left:auto;
     margin-right:auto;
     justify-content: center;
