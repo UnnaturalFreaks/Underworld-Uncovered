@@ -228,17 +228,6 @@ h2 {
         width: 55%;
         padding: 20px 40px;
     }
-/*@media (max-width: 767px) {
-
-    .right-column {
-        width: 35%;
-    }
-
-        .right-column img {
-            max-width: 100%;*/ /* Set the max-width to 100% for mobile screens */
-        /*}
-}*/
-
         .right-columnB p {
             text-align: justify;
             align-items: center;
@@ -266,10 +255,19 @@ h2 {
         text-align: justify;
     }
 
+.story-title {
+    font-size: 3vw;
+    text-align: center;
+    max-width: 100%; /* Allow the title to take the full width of its container */
+}
+@media only screen and (max-width: 768px) {
     .story-title {
-        padding: 0 10%;
-        text-align: center;
+    padding: 0 0 70px 0;
     }
+}
+
+
+
 
     figure h5 + p {
         margin-top: 0px; /* Adjust this value to increase or decrease the space */
@@ -306,9 +304,7 @@ h2 {
 * {
     box-sizing: border-box;
 }
-.carousel h2{
-    padding:0 0 70px 0;
-}
+
 .carousel {
     display: flex;
     flex-direction: column;
@@ -340,7 +336,7 @@ input[type=radio] {
 
 .magCover {
     position: absolute;
-    width: 80%;
+    max-width: 40%;
     height: auto;
     margin: auto;
     transition: transform 0.4s ease;
@@ -349,8 +345,7 @@ input[type=radio] {
 
 .container {
     width: 100%;
-    max-width: 40%;
-    max-height: 80%;
+    max-width: 100%;
     height: 100%;
     transform-style: preserve-3d;
     display: flex;
@@ -364,32 +359,32 @@ input[type=radio] {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     margin-bottom: 0;
-    width : 90%;
-    height: 600px;
+    width : 60%;
+    height: auto;
+    margin-bottom:40px;
+    aspect-ratio: 8/7.5;
+}
+.magCover img {
+    width:100%;
 }
 
 
-.carousel img {
-    width: 100%;
-    height: 100%;
-}
 
-#item-1:checked ~ .mags #mag-3, #item-2:checked ~ .mags #mag-1, #item-3:checked ~ .mags #mag-2 {
+    #item-1:checked ~ .mags #mag-3, #item-2:checked ~ .mags #mag-1, #item-3:checked ~ .mags #mag-2 {
     transform: translate(-40%) scale(0.8);
     opacity: 0.4;
     z-index: 0;
 }
 
 #item-1:checked ~ .mags #mag-2, #item-2:checked ~ .mags #mag-3, #item-3:checked ~ .mags #mag-1 {
-    transform: translatex(40%) scale(0.8);
+    transform: translate(40%) scale(0.8);
     opacity: 0.4;
     z-index: 0;
 }
 
 #item-1:checked ~ .mags #mag-1, #item-2:checked ~ .mags #mag-2, #item-3:checked ~ .mags #mag-3 {
-    transform: translatex(0) scale(1);
+    transform: translate(0) scale(1);
     opacity: 1;
     z-index: 1;
 }
@@ -425,11 +420,6 @@ input[type=radio] {
     width: 100%;
 }
 
-.subtext {
-    padding-right: 20px;
-}
-
-
 .description{
     width:100%;
     align-content:center;
@@ -447,20 +437,22 @@ input[type=radio] {
     flex-direction: column;
     align-items: center;
     margin:auto;
+    overflow:hidden;
 }
 
-    .info-space .title {
-        color: #403d40;
-        font-size: 14px;
-        line-height: 24px;
-        text-align: center; /* Center the title text */
+.title {
+    color: #403d40;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center; /* Center the title text */
+    padding-top: 16px;
     }
-    .info-space title {
-        padding: 16px 10px;
-    }
-    .info-space subtext {
-        padding: 16px 10px;
-    }
+
+.subtext {
+    padding-bottom:20px;
+    padding-right:20px;
+    padding-left:20px;
+}
 
 /* Set the height to auto when the selected radio button is checked */
 #item-1:checked ~ .info-space #mag-info-55,

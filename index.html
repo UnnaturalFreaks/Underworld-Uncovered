@@ -57,13 +57,11 @@
         <div class="line"></div>  <!-- Add this line -->
 
         <div class="carousel">
-            <div>
-                <h2 class="story-title">BACK ORDERS NOW AVAILABLE!</h2>
-            </div>
+            <h2 class="story-title">BACK ORDERS NOW AVAILABLE!</h2>
             <div class="container">
-                <input type="radio" name="magazines" id="item-1" checked>
-                <input type="radio" name="magazines" id="item-2">
-                <input type="radio" name="magazines" id="item-3">
+                <input type="radio" name="magazines" id="item-1" checked onchange="changeHeight('mag-info-55')">
+                <input type="radio" name="magazines" id="item-2" onchange="changeHeight('mag-info-54')">
+                <input type="radio" name="magazines" id="item-3" onchange="changeHeight('mag-info-53')">
                 <div class="mags">
                     <label class="magCover" for="item-1" id="mag-1">
                         <img src="images/Cropped/Underworld 55a.png">

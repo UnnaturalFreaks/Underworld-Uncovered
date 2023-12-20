@@ -19,6 +19,27 @@ $(document).ready(function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', function ()
+{
+    // Call changeHeight for the initially checked radio button
+    changeHeight('mag-info-55');
+});
+
+
+function changeHeight(infoSpaceId) 
+{
+  var infoSpaces = document.getElementsByClassName('info-space');
+
+  for (var i = 0; i < infoSpaces.length; i++) {
+    if (infoSpaces[i].id === infoSpaceId) {
+      infoSpaces[i].style.height = 'auto'; // Set the height to auto
+    } else {
+      infoSpaces[i].style.height = ''; // Reset the height
+    }
+  }
+}
+
+
 
 
 
