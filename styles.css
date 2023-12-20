@@ -1,14 +1,37 @@
+/*
+    Requirements and connected collections
+*/
+
+
+
+@font-face {
+    font-family: 'Destroyed Aero';
+    src: url('fonts/Destroyed Aero.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Hey Comic';
+    src: url('fonts/Hey Comic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Little Boy';
+    src: url('fonts/Little Boy.ttf') format('truetype');
+}
+
+
 body {
     background: linear-gradient(to right, #000000 10%, #174F54 10%, #174F54 90%, #000000 90%);
     color: #FFFFFF;
 }
+
 main {
     padding-bottom: 2.5%; /* Adjust this value to the height of your footer */
     margin-right: 10%;
     margin-left: 10%;
     font-family: "Little Boy";
     font-size: 22px;
-    letter-spacing:1px;
+    letter-spacing: 1px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -21,45 +44,41 @@ main {
         background: linear-gradient(to right, #000000 2.5%, #174F54 2.5%, #174F54 97.5%, #000000 97.5%);
     }
 }
-.customcolumns {
+
+
+
+
+
+
+
+
+
+
+/* 
+    fixed header to sticky header code
+*/
+header {
     display: flex;
-    flex-wrap: wrap;
-    padding-right:10%;
-    padding-left:10%;
-    padding-top:20px;
-    padding-bottom:20px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    top: 0;
+    z-index: 10;
 }
-.panel1 {
-    flex: 2 10%;
-    order: 1;
-    margin: auto;
-}
-.panel1 img {
-    max-width: 100%;
-    height: auto;
+
+.header-logo {
+    height: auto; /* keep this to maintain the aspect ratio of the image */
+    width: 40%; /* adjust this value to change the size of the image */
+    margin: auto; /* center the image */
 }
 
 
-.panel2 {
-    flex: 2;
-    order: 2;
-    padding: 20px;
-    box-sizing: border-box;
-    margin: auto; /* This will center the image */
-}
-@media screen and (max-width: 768px) {
-    .panel1,
-    .panel2 {
-        order: 0;
-        flex: 1 100%;
-        
-    }
-    .customcolumns {
-        align-items: center;
-        padding: 0;
-    }
 
-}
+
+
+
+
 
 
 /* Style the header */
@@ -82,66 +101,89 @@ main {
     background: linear-gradient(to right, #000000 10%, #174F54 10%, #174F54 90%, #000000 90%);
 }
 
-@media screen and (max-width:768px){
+
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page > position:fixed and top:0 */
+.sticky + .main {
+    padding-top: 102px;
+}
+
+/* settings for the img when fixed*/
+.sticky img {
+    width: 20%;
+    transition: all 0.05s ease-in-out;
+}
+@media screen and (max-width:768px) {
     .sticky {
         background: linear-gradient(to right, #000000 2.5%, #174F54 2.5%, #174F54 97.5%, #000000 97.5%);
     }
 }
 
-    /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-    .sticky + .main {
-        padding-top: 102px;
+
+
+
+
+
+
+.customcolumns {
+    display: flex; /*this allows them to appear together on the same row in pc view */
+    flex-wrap: wrap;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.panel1 {
+    flex: 1 10%; /* sets their initial size to 10%, but with a ratio of 1: 1 [panel 2 also has flex scale 1], meaning they end up growing to 50% each. Setting the value above 50 should make them stack vertically*/
+    order: 1;
+    margin: auto;
+}
+    .panel1 img {
+        max-width: 100%;
+        height: auto;
     }
-    .sticky img {
-        width: 20%;
-        transition: all 0.05s ease-in-out;
+
+.panel2 {
+    flex: 1;
+    order: 2;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: auto; /* This will center the image */
+}
+
+/* on mobile, stack them one after another.*/
+
+@media screen and (max-width: 768px) {
+    .panel1,
+    .panel2 {
+        order: 0;
+        flex: 1 100%; /*makes them take up the whole 100% of the row, so they are stacked next to each other*/
     }
 
-
-
-
-
-
-
-@font-face {
-    font-family: 'Destroyed Aero';
-    src: url('fonts/Destroyed Aero.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'Hey Comic';
-    src: url('fonts/Hey Comic.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'Little Boy';
-    src: url('fonts/Little Boy.ttf') format('truetype');
+    .customcolumns {
+        align-items: center;
+        padding: 0;
+    }
 }
 
 
 
 
 
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
-    top: 0;
-    z-index: 10;
-}
 
-.header-logo {
-    height: auto; /* keep this to maintain the aspect ratio of the image */
-    width: 40%; /* adjust this value to change the size of the image */
-    margin: auto; /* adjust this value to add some space between the image and the text */
-}
 
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 70%;
-  }
+
+
+
+
+
+
+
+
+
+
+
 
 
 h1, h3, h4, h5, h6 {
@@ -197,23 +239,23 @@ h2 {
 
     .padded-paragraph {
         width: 75%;
-        margin: 2.5% auto; /* Center the paragraph horizontally with a top and bottom margin of 60px */
+        margin: 2.5% auto; 
         text-align: justify;
     }
 
 h3.story-title {
     font-size: 6vh;
     text-align: center;
-    max-width: 100%; /* Allow the title to take the full width of its container */
+    max-width: 100%;
 }
 @media only screen and (max-width: 768px) {
     h3.story-title {
-        font-size: 4.5vh;
-        padding: 0 0 70px 0;
+        font-size: 3vh;
+        max-width: 100%;
     }
 }
     figure h5 + p {
-        margin-top: 0px; /* Adjust this value to increase or decrease the space */
+        margin-top: 0px; 
         text-align: justify;
         align-items: center;
     }
