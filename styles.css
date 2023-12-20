@@ -395,6 +395,14 @@ input[type=radio] {
 }
 
 .description-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin:auto;
+}
+
+/*
+.description-box {
     background-color: #fff;
     color:#000;
     border-radius: 8px;
@@ -411,6 +419,7 @@ input[type=radio] {
 }
 
 
+*/
 
 
 
@@ -426,6 +435,7 @@ input[type=radio] {
     left: 0;
     z-index: -1;
     transition: opacity 0.2s ease;
+
 }
 
 
@@ -461,9 +471,10 @@ input[type=radio] {
 }
 
 .info-space {
-    background:#fff;
-    width:240%;
-    color:#000;
+    background: #fff;
+    width: 240%;
+    color: #000;
+    position: absolute;
 }
 .info-space .title {
     color: #403d40;
