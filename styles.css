@@ -399,7 +399,7 @@ input[type=radio] {
     color:#000;
     border-radius: 8px;
     height: 150px;
-    width: 120%;
+    width: 240%;
     padding: 16px 10px;
     position: relative;
     top: 10px;
@@ -450,19 +450,31 @@ input[type=radio] {
     top: 0;
     left: 30px;
     transition: transform 0.4s ease-in;
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
+    height: auto;
+    width: 240%;
+    padding: 16px 10px;
+    position: relative;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    margin-top: 10px;
 }
 
-#item-1:checked ~ .description-box #mag-info-55 {
+#item-1:checked ~ .info-area #mag-info-55 {
     opacity: 1;
     z-index: 1;
 }
 
-#item-2:checked ~ .description-box #mag-info-54 {
+#item-2:checked ~ .info-area #mag-info-54 {
     opacity: 1;
     z-index: 1;
 }
 
-#item-3:checked ~ .description-box #mag-info-53 {
+#item-3:checked ~ .info-area #mag-info-53 {
     opacity: 1;
     z-index: 1;
 }
