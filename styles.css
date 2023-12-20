@@ -401,27 +401,6 @@ input[type=radio] {
     margin:auto;
 }
 
-/*
-.description-box {
-    background-color: #fff;
-    color:#000;
-    border-radius: 8px;
-    height: 150px;
-    width: 240%;
-    padding: 16px 10px;
-    position: relative;
-    top: 10px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-    overflow: hidden;
-    margin-top:10px;
-}
-
-
-*/
-
-
 
 .magazine-info {
     width: calc(100% - 32px);
@@ -450,56 +429,50 @@ input[type=radio] {
     padding-right: 20px;
 }
 
-.info-area {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 30px;
+
+.description{
+    width:100%;
+    align-content:center;
+}
+.info-space {
+    background: #fff;
+    width: 100%; /* Adjust the width as needed */
+    color: #000;
+    height:0;
     transition: transform 0.4s ease-in;
     background-color: #fff;
     color: #000;
     border-radius: 8px;
-    height: auto;
-    width: 240%;
-    padding: 16px 10px;
-    position: relative;
-    top: 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 12px;
-    margin-top: 10px;
+    margin:auto;
 }
 
-.info-space {
-    background: #fff;
-    width: 240%;
-    color: #000;
-    position: absolute;
-}
-.info-space .title {
-    color: #403d40;
-    font-size: 14px;
-    line-height: 24px;
-}
+    .info-space .title {
+        color: #403d40;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center; /* Center the title text */
+    }
+    .info-space title {
+        padding: 16px 10px;
+    }
+    .info-space subtext {
+        padding: 16px 10px;
+    }
 
-
-#item-1:checked ~ .info-area #mag-info-55 {
-    opacity: 1;
-    z-index: 1;
+/* Set the height to auto when the selected radio button is checked */
+#item-1:checked ~ .info-space #mag-info-55,
+#item-2:checked ~ .info-space #mag-info-54,
+#item-3:checked ~ .info-space #mag-info-53 {
+    height: auto;
+    overflow: visible; /* Show the content when the height is auto */
 }
-#item-1:checked ~ .info-area #mag-55 {
-    opacity: 1;
-    z-index: 1;
+/* Adjust the height transition for smoother animation */
+#item-1:checked ~ .info-space #mag-info-55,
+#item-2:checked ~ .info-space #mag-info-54,
+#item-3:checked ~ .info-space #mag-info-53 {
+    transition: height 0.4s ease-in-out;
 }
-
-#item-2:checked ~ .info-area #mag-info-54 {
-    opacity: 1;
-    z-index: 1;
-}
-
-#item-3:checked ~ .info-area #mag-info-53 {
-    opacity: 1;
-    z-index: 1;
-}
-  
 
