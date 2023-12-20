@@ -5,11 +5,6 @@
 
 
 @font-face {
-    font-family: 'Destroyed Aero';
-    src: url('fonts/Destroyed Aero.ttf') format('truetype');
-}
-
-@font-face {
     font-family: 'Hey Comic';
     src: url('fonts/Hey Comic.ttf') format('truetype');
 }
@@ -55,8 +50,12 @@ main {
 
 
 /* 
-    fixed header to sticky header code
+    header that can switch to sticky header code
 */
+
+
+
+
 header {
     display: flex;
     justify-content: center;
@@ -120,7 +119,10 @@ header {
 }
 
 
+/*
+    columns, panel one is left, panel two is right, they appear next to one another on pc, but on mobile stack vertically.
 
+*/
 
 
 
@@ -153,7 +155,6 @@ header {
 }
 
 /* on mobile, stack them one after another.*/
-
 @media screen and (max-width: 768px) {
     .panel1,
     .panel2 {
@@ -199,10 +200,12 @@ h2 {
     letter-spacing: 0.15em;
     padding: 1% 1%;
     font-size: 250%;
+    text-align:center;
 }
 
 
-  
+
+  /*links*/
   a {
     color: #da4040;
   }
@@ -211,24 +214,11 @@ h2 {
     text-decoration: underline;
   }
   
-  .image-container {
-    display: flex;
-    justify-content: space-around;
-    padding: 0 3%;
-  }
-  
-  .image-container figure {
-    width: 100%;
-  }
-  
-  .image-container img {
-    width: 100%;
-  }
-  
-  .image-container figcaption {
-    text-align: center;
-  }
-  
+
+
+
+
+  /*spacer line*/
   .line {
     height: 1px;
     background-color: #831b1b;
@@ -249,9 +239,10 @@ h3.story-title {
     max-width: 100%;
 }
 @media only screen and (max-width: 768px) {
-    h3.story-title {
+    h3.story-title , h2.story-title{
         font-size: 3vh;
         max-width: 100%;
+        text-align:center;
     }
 }
     figure h5 + p {
@@ -260,36 +251,20 @@ h3.story-title {
         align-items: center;
     }
 
-    footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        text-align: center;
-        background-color: #000000;
-        padding: 2vh 0vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-        footer p {
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            font-size: 80%;
-        }
-
-
-
-
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
 
 * {
     box-sizing: border-box;
 }
 
+
+
+/*
+    Carousel code
+*/
+
+
+/* Carousel container*/
 .carousel {
     display: flex;
     flex-direction: column;
@@ -302,32 +277,24 @@ h3.story-title {
     border-radius: 2px;
 }
 
-    .carousel.color-1 {
+    .carousel.colour-1 {
         background-color: #C8DBC5;
     }
 
-    .carousel.color-2 {
+    .carousel.colour-2 {
         background-color: #C2787E;
     }
 
-    .carousel.color-3 {
+    .carousel.colour-3 {
         background-color: #AEB4D1;
     }
 
-
+/* hides the physical radio check buttons so that they can be replaced by magazine covers*/
 input[type=radio] {
     display: none;
 }
 
-.magCover {
-    position: absolute;
-    max-width: 40%;
-    height: auto;
-    margin: auto;
-    transition: transform 0.4s ease;
-    cursor: pointer;
-}
-
+/*container for the magazine covers and their buttons.*/
 .container {
     width: 100%;
     max-width: 100%;
@@ -339,7 +306,7 @@ input[type=radio] {
     align-items: center;
     margin-top: auto;
 }
-
+/*Container for all of the magazine covers, scales the size correctly to the shape of all 3 covers*/
 .mags {
     display: flex;
     justify-content: center;
@@ -350,12 +317,35 @@ input[type=radio] {
     margin-bottom:40px;
     aspect-ratio: 8/7.5;
 }
+ 
+
+/*Individual magazine cover, is the replacement button [label] for the radio buttons*/
+.magCover {
+    position: absolute;
+    max-width: 40%;
+    height: auto;
+    margin: auto;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+/* cover image*/
 .magCover img {
     width:100%;
 }
 
+ 
+@media only screen and (max-width: 768px) {
+    .magCover {
+        width:65%;
+        max-width:65%;
+        height:auto;
+    }
+    .mags{
+        width:90%
+    }
 
-
+}
+/* Logic for magazine cover movement */
     #item-1:checked ~ .mags #mag-3, #item-2:checked ~ .mags #mag-1, #item-3:checked ~ .mags #mag-2 {
     transform: translate(-40%) scale(0.8);
     opacity: 0.4;
@@ -374,48 +364,20 @@ input[type=radio] {
     z-index: 1;
 }
 
-.description-box {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin:auto;
-}
-
-
-.magazine-info {
-    width: calc(100% - 32px);
-    display: block;
-}
-
-.magazine-info {
-    opacity: 0;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    z-index: -1;
-    transition: opacity 0.2s ease;
-
-}
-
-
-
-.sub-line {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
+/* container for all descriptions*/
 .description{
     width:100%;
     align-content:center;
 }
+
+/* each description box for each carousel magazine, this cannot have padding, as the text for unselected magazines
+is hidden by setting the height to 0, and padding will make the minimum size lower, instead the padding is in the 
+title and subtext children classes.*/
 .info-space {
     background: #fff;
-    width: 100%; /* Adjust the width as needed */
-    color: #000;
-    height:0;
+    width: 100%; 
+    height:0; /*hidden by default until height is changed by js function*/
     transition: transform 0.4s ease-in;
-    background-color: #fff;
     color: #000;
     border-radius: 8px;
     display: flex;
@@ -439,17 +401,39 @@ input[type=radio] {
     padding-left:20px;
 }
 
-/* Set the height to auto when the selected radio button is checked */
-#item-1:checked ~ .info-space #mag-info-55,
-#item-2:checked ~ .info-space #mag-info-54,
-#item-3:checked ~ .info-space #mag-info-53 {
-    height: auto;
-    overflow: visible; /* Show the content when the height is auto */
-}
-/* Adjust the height transition for smoother animation */
-#item-1:checked ~ .info-space #mag-info-55,
-#item-2:checked ~ .info-space #mag-info-54,
-#item-3:checked ~ .info-space #mag-info-53 {
-    transition: height 0.4s ease-in-out;
-}
 
+/*spacer at end to make space for footer.*/
+
+ .spacer{
+      height: 40px;
+  }
+  @media only screen and (max-width: 768px) {
+  .spacer{
+      height:100px;
+    }
+  }
+
+/*
+    footer
+*/
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #000000;
+        padding: 2vh 0vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        footer p {
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-size: 80%;
+        }

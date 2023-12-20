@@ -1,30 +1,38 @@
+///
+///     changes the background colour
+///
+
+
 $(document).ready(function () {
-    var colorIndex = 1;
+    var colourIndex = 1;
 
     $('input').on('change', function () {
         var currentIndex = parseInt($('input[name="magazines"]:checked').attr('id').split('-')[1]);
 
         // Increment or decrement the color index based on the direction
-        if (currentIndex === colorIndex + 1 || (currentIndex === 1 && colorIndex === 3)) {
+        if (currentIndex === colourIndex + 1 || (currentIndex === 1 && colourIndex === 3)) {
             // Move forward
-            colorIndex = (colorIndex % 3) + 1;
-        } else if (currentIndex === colorIndex - 1 || (currentIndex === 3 && colorIndex === 1)) {
+            colourIndex = (colourIndex % 3) + 1;
+        } else if (currentIndex === colourIndex - 1 || (currentIndex === 3 && colourIndex === 1)) {
             // Move backward
-            colorIndex = (colorIndex - 1 === 0) ? 3 : colorIndex - 1;
+            colourIndex = (colourIndex - 1 === 0) ? 3 : colourIndex - 1;
         }
 
-        // Toggle the 'color-1', 'color-2', and 'color-3' classes
-        $('.carousel').removeClass('color-1 color-2 color-3').addClass('color-' + colorIndex);
+        // Toggle the 'colour-1', 'colour-2', and 'colour-3' classes
+        $('.carousel').removeClass('colour-1 colour-2 colour-3').addClass('colour-' + colourIndex);
     });
 });
 
 
-document.addEventListener('DOMContentLoaded', function ()
-{
-    // Call changeHeight for the initially checked radio button
-    changeHeight('mag-info-55');
-});
 
+
+
+
+
+
+///
+///     Code to change the height of the correct info-space,sets the selected box's height to auto, and the others back to intial 0;
+///
 
 function changeHeight(infoSpaceId) 
 {
@@ -40,19 +48,26 @@ function changeHeight(infoSpaceId)
 }
 
 
+// Call changeHeight for the initially checked radio button
+document.addEventListener('DOMContentLoaded', function ()
+{
+    changeHeight('mag-info-55');
+});
 
 
 
-// When the user scrolls the page, execute scrollFunction
+
+
+
+///
+///     When the user scrolls, call the function, and if scrolled past, add sticky class to header, remove otherwise.
+///
+
+
+
 window.onscroll = function () { scrollFunction() };
-
-// Get the header
 var header = document.getElementById("stickyHeader");
-
-// Get the offset position of the navbar
-var sticky = header.offsetTop;
-
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+var sticky = header.offsetTop; //offset position
 function scrollFunction() {
     if (window.pageYOffset > sticky)
     {
