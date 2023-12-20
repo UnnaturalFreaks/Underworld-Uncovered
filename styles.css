@@ -428,11 +428,7 @@ input[type=radio] {
     transition: opacity 0.2s ease;
 }
 
-    .magazine-info .title {
-        color: #403d40;
-        font-size: 14px;
-        line-height: 24px;
-    }
+
 
 .sub-line {
     display: flex;
@@ -464,7 +460,23 @@ input[type=radio] {
     margin-top: 10px;
 }
 
+.info-space {
+    background:#fff;
+    width:240%;
+    color:#000;
+}
+.info-space .title {
+    color: #403d40;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+
 #item-1:checked ~ .info-area #mag-info-55 {
+    opacity: 1;
+    z-index: 1;
+}
+#item-1:checked ~ .info-area #mag-55 {
     opacity: 1;
     z-index: 1;
 }

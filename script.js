@@ -22,8 +22,8 @@ $(document).ready(function () {
 
 
 
-// When the user scrolls the page, execute myFunction
-window.onscroll = function () { myFunction() };
+// When the user scrolls the page, execute scrollFunction
+window.onscroll = function () { scrollFunction() };
 
 // Get the header
 var header = document.getElementById("stickyHeader");
@@ -32,10 +32,13 @@ var header = document.getElementById("stickyHeader");
 var sticky = header.offsetTop;
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-    if (window.pageYOffset > sticky) {
+function scrollFunction() {
+    if (window.pageYOffset > sticky)
+    {
         header.classList.add("sticky");
-    } else {
+    }
+    else
+    {
         header.classList.remove("sticky");
     }
 }
