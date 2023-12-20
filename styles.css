@@ -194,60 +194,6 @@ h2 {
     margin: auto;
     padding: 5px 1%;
   }
-  
-  .columns {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1px;
-  }
-  
-  .left-column {
-    width: 55%;
-    padding: 1% 5%;
-    display: block; /* This makes the image a block element, which allows us to use auto margins for centering */
-    margin: auto; /* This will center the image */
-  }
-  
-  .left-column p {
-    text-align: justify;
-    align-items: center;
-  }
-  
-  .right-column {
-    width: 40%;
-    padding: 5px 5px;
-  }
-
-    .right-column img {
-        max-width: 80%; /* This will ensure the image does not exceed the width of its container */
-        display: block; /* This makes the image a block element, which allows us to use auto margins for centering */
-        margin: auto; /* This will center the image */
-    }
-
-    .right-columnB {
-        width: 55%;
-        padding: 20px 40px;
-    }
-        .right-columnB p {
-            text-align: justify;
-            align-items: center;
-            padding-left: 0;
-        }
-
-    .columns {
-        display: flex;
-        align-items: center;
-    }
-
-    .left-columnB {
-        width: 45%;
-    }
-
-        .left-columnB img {
-            max-width: 100%; /* This will ensure the image does not exceed the width of its container */
-            display: block; /* This makes the image a block element, which allows us to use auto margins for centering */
-            margin: auto; /* This will center the image */
-        }
 
     .padded-paragraph {
         width: 75%;
@@ -255,20 +201,17 @@ h2 {
         text-align: justify;
     }
 
-.story-title {
-    font-size: 3vw;
+h3.story-title {
+    font-size: 6vh;
     text-align: center;
     max-width: 100%; /* Allow the title to take the full width of its container */
 }
 @media only screen and (max-width: 768px) {
-    .story-title {
-    padding: 0 0 70px 0;
+    h3.story-title {
+        font-size: 4.5vh;
+        padding: 0 0 70px 0;
     }
 }
-
-
-
-
     figure h5 + p {
         margin-top: 0px; /* Adjust this value to increase or decrease the space */
         text-align: justify;
